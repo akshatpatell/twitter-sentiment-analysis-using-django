@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+<link rel="stylesheet" href="{% static 'login.css' %}">  
+<body>
+    
+            
+    <div class = 'container'>
+        <form method = "POST" >
+            <div class = 'container2'>
+                <h1>login</h1>
+                {% csrf_token %}
+            
+                {{ form.as_p}}
+                <input type = 'submit'class = 'btn' value = 'sign in'>
+                <a href = {% url 'register' %}>signup</a>
+            </div>
+    </div>
+    
+</body>
+
+
+
+</form>
+</html>

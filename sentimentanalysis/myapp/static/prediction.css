@@ -1,0 +1,52 @@
+*{
+    padding: 20px;
+}
+
+#head{
+    color: aliceblue;
+    font-family: alfa slab one;
+    font-size: 40px;
+    
+}
+
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -50px;
+    margin-left: -50px;
+    margin-right: -50px;
+    height: 90px;
+    padding: 10px 50px;
+    background:rgba(59, 59, 59, 0.5);
+  
+  
+}
+
+.navbar{
+    list-style: none;
+    
+}
+  
+.navbar li{
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+    
+}
+  
+.navbar a{
+    text-decoration: none;
+    font-size: 20px;
+    color: aliceblue;
+}
+  
+header a{
+    text-decoration: none;
+    font-size: 15px;
+    color: aliceblue;
+}
+
+

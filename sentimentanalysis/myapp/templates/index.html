@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="{% static 'index.css' %}">  
+      <body>
+      <header>
+      <h1>sentiment analysis</h1>
+            <nav>
+                  <ul class = 'navbar'>
+                  <li><a href = '' class = 'navbar' >about</a></li>
+                  <li><a href = 'https://github.com/akshatpatell' class = 'navbar' >contact</a></li>
+                  <li><a href = '{% url 'show' %}' class = 'navbar'>analysis</a></li>
+            
+            </nav>
+            {% if request.user.is_authenticated %}
+            <p>user - {{request.user}}</p>
+            
+            <a href = 'logout' class = 'logout-style'>logout</a>
+            {% else %}
+                  <li><a href = '{% url 'login' %}' class = 'logout-style'>login</a></li>
+            {% endif %}
+      </header>
+      
+      
+	<form action="hit" method="post">
+		{% csrf_token %}
+		{{ ff.as_p }}<br>
+      
+		<button type="submit" class = 'btn'>submit</button>
+	</form>
+      
+</body>
+</html>

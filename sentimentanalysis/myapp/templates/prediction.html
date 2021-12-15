@@ -1,0 +1,50 @@
+{% load static %}
+<html>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<head>
+		<link rel="stylesheet" href="{% static 'prediction.css' %}">  
+		<title>Predicitons based on tweepy module</title>
+		
+	</head>
+	<body>
+		<header>
+        	<h1 id = 'head'>sentiment analysis</h1>
+            <nav>
+                <ul class = 'navbar'>
+                <li><a href = '' class = 'navbar' >about</a></li>
+                <li><a href = 'https://github.com/akshatpatell' class = 'navbar' >contact</a></li>
+                <li><a href = '{% url 'show' %}' class = 'navbar'>analysis</a></li>
+            
+            </nav>
+            {% if request.user.is_authenticated %}
+            <p>user - {{request.user}}</p>
+            
+            <a href = 'logout' class = 'logout-style'>logout</a>
+            {% else %}
+                <li><a href = '{% url 'login' %}' class = 'logout-style'>login</a></li>
+            {% endif %}
+      </header>
+
+
+	  	
+		<form action="" method="post">
+			{% csrf_token %}
+
+			{% for x in arr_pred %}
+				{{ x }}<br>
+			{% endfor %}
+			<p>
+			{% for x in arr_pos_txt %}
+				{{ x }}<br>
+			{% endfor %}
+			</p>
+			<p>
+			{% for y in arr_neg_txt %}
+				{{ y }}<br>
+			{% endfor %}
+			</p>
+			<a href = {% url 'show' %}>go back</a>
+		</form>
+	</body>
+</html>
