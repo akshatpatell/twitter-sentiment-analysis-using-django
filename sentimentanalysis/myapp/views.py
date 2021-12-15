@@ -43,10 +43,10 @@ def register(request):
 
 class TwitterSentClass():
     def __init__(self):
-        API_key = 'cpmy0HDV7Upq0F0a4frxQni88'
-        API_secret = 'Oj1meU0CsfaBErCryvksBkF5Ge3Ob0ZRA91tYGrbATzFNQimYm'
-        access_token = '910182886942302208-GNGGzpmZbyKaSeQKmNPVZ3SoHVn7ZJp'
-        access_token_secret = '7VkmKxvstRgOaWJ9Jn6wFFalnx9PYYWT8mHdIceLCyh2n'
+        API_key = ''
+        API_secret = ''
+        access_token = ''
+        access_token_secret = ''
         try:
             self.auth = OAuthHandler(API_key, 
                                      API_secret)
